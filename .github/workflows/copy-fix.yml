@@ -1,4 +1,4 @@
-name: Push Docker Image to Private Registry
+name: Synchronize the image to Aliyun
 run-name: Copy ${{ inputs.source_repo }} to ${{ inputs.destination_repo }}
 on:
   workflow_dispatch:
