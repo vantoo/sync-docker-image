@@ -14,7 +14,9 @@ Docker 的一些服务所在域名被封杀，无法直接访问和拉取镜像�
 
 1. 使用阿里云开通个人实例服务，并获取 [登录用户名和固定密码](https://cr.console.aliyun.com/cn-hangzhou/instance/credentials)
 
-2. 克隆本仓库，在仓库设置中配置阿里云镜像仓库账号密码，注意 *Name* 必须为 `DESTINATION_USERNAME` 和 `DESTINATION_USERNAME` 。
+2. 克隆本仓库，在仓库设置中配置阿里云镜像仓库账号和密码
+    
+    其中注意 *Name* 必须为 `DESTINATION_USERNAME` 和 `DESTINATION_USERNAME` 。
 
 ![配置密码页面](assets/settings-actions-secrets.png)
 
@@ -34,6 +36,6 @@ Docker 的一些服务所在域名被封杀，无法直接访问和拉取镜像�
 > # 仓库及标签 (格式 repo:tag)
 > source_repo: nginx:1.13
 > # 目标仓库及标签 (格式 repo:tag)
-> destination_repo: ikrong/nginx:1.13
+> destination_repo: vantoo/nginx:1.13
 > ```
 > 必须要填写仓库及标签
