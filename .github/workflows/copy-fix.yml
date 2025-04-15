@@ -48,8 +48,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ${{ github.event.inputs.destination }}
-          username: ${{ split(secrets.SOURCE_CREDENTIAL, ':')[0] }}
-          password: ${{ split(secrets.SOURCE_CREDENTIAL, ':')[1] }}
+          username: ${{ secrets.DESTINATION_USERNAME }}
+          password: ${{ secrets.DESTINATION_PASSWORD }}
           
       - name: Push to private registry
         run: |
