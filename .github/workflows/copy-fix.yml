@@ -36,13 +36,13 @@ jobs:
     
       - name: Pull Docker image
         run: |
-          echo "Pulling image from ${{ github.event.inputs.source }}:${{ github.event.inputs.source_repo }}"
-          docker pull ${{ github.event.inputs.source }}:${{ github.event.inputs.source_repo }}
+          echo "Pulling image from ${{ github.event.inputs.source }}/${{ github.event.inputs.source_repo }}"
+          docker pull ${{ github.event.inputs.source }}/${{ github.event.inputs.source_repo }}
         
       - name: Tag Docker image for private registry
         run: |
-          echo "Tagging image as ${{ github.event.inputs.destination }}:${{ github.event.inputs.destination_repo }}"
-          docker tag ${{ github.event.inputs.source }}:${{ github.event.inputs.source_repo }} ${{ github.event.inputs.destination }}:${{ github.event.inputs.destination_repo }}
+          echo "Tagging image as ${{ github.event.inputs.destination }}/${{ github.event.inputs.destination_repo }}"
+          docker tag ${{ github.event.inputs.source }}/${{ github.event.inputs.source_repo }} ${{ github.event.inputs.destination }}/${{ github.event.inputs.destination_repo }}
         
       - name: Login to private registry
         uses: docker/login-action@v2
@@ -53,6 +53,6 @@ jobs:
           
       - name: Push to private registry
         run: |
-          echo "Pushing image to ${{ github.event.inputs.destination }}:${{ github.event.inputs.destination_repo }}"
-          docker push ${{ github.event.inputs.destination }}:${{ github.event.inputs.destination_repo }}
+          echo "Pushing image to ${{ github.event.inputs.destination }}/${{ github.event.inputs.destination_repo }}"
+          docker push ${{ github.event.inputs.destination }}/${{ github.event.inputs.destination_repo }}
           echo "Push completed successfully"
