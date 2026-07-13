@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       
       - name: Print input parameters
         run: |
@@ -45,7 +45,7 @@ jobs:
           docker tag ${{ github.event.inputs.source }}/${{ github.event.inputs.source_repo }} ${{ github.event.inputs.destination }}/${{ github.event.inputs.destination_repo }}
         
       - name: Login to private registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ${{ github.event.inputs.destination }}
           username: ${{ secrets.DESTINATION_USERNAME }}
